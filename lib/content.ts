@@ -1,8 +1,8 @@
 import type { StaticImageData } from "next/image";
 import { BRANDS } from "@/lib/site";
 import vidrieraMujer from "@/media/hd/7.jpg";
-import sombreros from "@/assets/14.jpeg";
-import carteras from "@/assets/15.jpeg";
+import sombreros from "@/media/hd/14.jpg";
+import carteras from "@/media/hd/15.jpg";
 import calzado from "@/media/hd/16.jpg";
 import vidrieraHombre from "@/media/hd/18.jpg";
 import rinconCriollo from "@/media/hd/19.jpg";
