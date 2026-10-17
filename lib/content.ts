@@ -1,13 +1,13 @@
 import type { StaticImageData } from "next/image";
 import { BRANDS } from "@/lib/site";
-import vidrieraMujer from "@/assets/7.jpeg";
+import vidrieraMujer from "@/media/hd/7.jpg";
 import sombreros from "@/assets/14.jpeg";
 import carteras from "@/assets/15.jpeg";
-import calzado from "@/assets/16.jpeg";
-import vidrieraHombre from "@/assets/18.jpeg";
-import rinconCriollo from "@/assets/19.jpeg";
-import plateria from "@/assets/21.jpeg";
-import mates from "@/assets/22.jpeg";
+import calzado from "@/media/hd/16.jpg";
+import vidrieraHombre from "@/media/hd/18.jpg";
+import rinconCriollo from "@/media/hd/19.jpg";
+import plateria from "@/media/hd/21.jpg";
+import mates from "@/media/hd/22.jpg";
 
 export type Rubro = {
   id: string;

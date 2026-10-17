@@ -19,13 +19,13 @@ import {
 } from "@/lib/site";
 import type { Content, Rubro } from "@/lib/content";
 
-import cartel from "@/assets/6.jpeg";
-import frente from "@/assets/5.jpeg";
+import cartel from "@/media/hd/6.jpg";
+import frente from "@/media/hd/5.jpg";
 import salon from "@/assets/12.jpeg";
 import mostrador from "@/assets/13.jpeg";
-import probador from "@/assets/17.jpeg";
-import lampara from "@/assets/23.jpeg";
-import lamparaCerca from "@/assets/24.jpeg";
+import probador from "@/media/hd/17.jpg";
+import lampara from "@/media/hd/23.jpg";
+import lamparaCerca from "@/media/hd/24.jpg";
 import poster from "@/media/recorrido-poster.jpg";
 
 // Rubros que van como fotos grandes; el resto va en la fila de tarjetas.
@@ -53,7 +53,7 @@ function Tile({ href, img, alt, title, cta, sizes, pos, external = true, id }: T
       className="tile"
       {...(external ? { target: "_blank", rel: "noopener" } : {})}
     >
-      <Image src={img} alt={alt} fill sizes={sizes} quality={70} className="tile__img" style={{ objectPosition: pos }} />
+      <Image src={img} alt={alt} fill sizes={sizes} quality={85} className="tile__img" style={{ objectPosition: pos }} />
       <span className="tile__copy">
         <span className="tile__title display">{title}</span>
         <span className="btn btn-accent btn-sm tile__btn">
@@ -69,7 +69,7 @@ function RubroCard({ r }: { r: Rubro }) {
   return (
     <li className="card" id={`rubro-${r.id}`}>
       <div className="card__photo">
-        <Image src={r.img} alt={r.alt} fill sizes="(min-width: 1024px) 19vw, 72vw" quality={65} className="object-cover" style={{ objectPosition: r.pos }} />
+        <Image src={r.img} alt={r.alt} fill sizes="(min-width: 1024px) 19vw, 72vw" quality={85} className="object-cover" style={{ objectPosition: r.pos }} />
       </div>
       <div className="card__body">
         <h3 className="card__title display">{r.title}</h3>
@@ -226,7 +226,7 @@ export function Landing({ rubros, reasons, brands, fixedNow }: Content & { fixed
               alt="Cartel de madera de El Prado, 1999, sobre la pared de ladrillo del local."
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
-              quality={70}
+              quality={85}
               className="object-cover"
               style={{ objectPosition: "50% 40%" }}
             />
@@ -279,7 +279,7 @@ export function Landing({ rubros, reasons, brands, fixedNow }: Content & { fixed
                 { img: frente, alt: "Frente del local: pared de ladrillo con borde mostaza y el cartel de madera de El Prado.", pos: "50% 35%" },
               ].map((g, i) => (
                 <figure key={i} className="gallery__item" data-reveal style={{ "--i": i + 1 } as React.CSSProperties}>
-                  <Image src={g.img} alt={g.alt} fill sizes="(min-width: 1024px) 24vw, 46vw" quality={60} className="object-cover" style={{ objectPosition: g.pos }} />
+                  <Image src={g.img} alt={g.alt} fill sizes="(min-width: 1024px) 24vw, 46vw" quality={85} className="object-cover" style={{ objectPosition: g.pos }} />
                 </figure>
               ))}
             </div>

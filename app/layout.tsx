@@ -94,7 +94,6 @@ const jsonLd = {
 // Marca la página como "con JS" antes de pintar y revela cada bloque al entrar en pantalla.
 // Si el script no corre, todo queda visible.
 const revealScript = `(function(){var d=document.documentElement;d.classList.add('js');
-if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('motion');}
 if(!('IntersectionObserver' in window)){d.classList.remove('js');return;}
 function go(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});
 document.querySelectorAll('[data-reveal]').forEach(function(el){io.observe(el);});}
