@@ -2,7 +2,6 @@ import Image, { type StaticImageData } from "next/image";
 import { Header } from "./Header";
 import { Hero } from "./Hero";
 import { OpenSign } from "./OpenSign";
-import { LazyVideo } from "./LazyVideo";
 import { WaFloat } from "./WaFloat";
 import { Logo } from "./Logo";
 import { CardIcon, HangerIcon, InstagramIcon, PhoneIcon, PinIcon, SwapIcon, WhatsAppIcon } from "./Icons";
@@ -20,13 +19,11 @@ import {
 import type { Content, Rubro } from "@/lib/content";
 
 import cartel from "@/media/hd/6.jpg";
-import frente from "@/media/hd/5.jpg";
-import salon from "@/assets/12.jpeg";
-import mostrador from "@/assets/13.jpeg";
+import salon from "@/media/hd/12.jpg";
+import mostrador from "@/media/hd/13.jpg";
 import probador from "@/media/hd/17.jpg";
 import lampara from "@/media/hd/23.jpg";
 import lamparaCerca from "@/media/hd/24.jpg";
-import poster from "@/media/recorrido-poster.jpg";
 
 // Rubros que van como fotos grandes; el resto va en la fila de tarjetas.
 const FEATURED = ["mujer", "hombre", "campo"];
@@ -56,10 +53,7 @@ function Tile({ href, img, alt, title, cta, sizes, pos, external = true, id }: T
       <Image src={img} alt={alt} fill sizes={sizes} quality={85} className="tile__img" style={{ objectPosition: pos }} />
       <span className="tile__copy">
         <span className="tile__title display">{title}</span>
-        <span className="btn btn-accent btn-sm tile__btn">
-          <WhatsAppIcon />
-          {cta}
-        </span>
+        <span className="tile__btn">{cta}</span>
       </span>
     </a>
   );
@@ -72,9 +66,9 @@ function RubroCard({ r }: { r: Rubro }) {
         <Image src={r.img} alt={r.alt} fill sizes="(min-width: 1024px) 19vw, 72vw" quality={85} className="object-cover" style={{ objectPosition: r.pos }} />
       </div>
       <div className="card__body">
-        <h3 className="card__title display">{r.title}</h3>
+        <h3 className="card__title">{r.title}</h3>
         <p className="card__text">{r.text}</p>
-        <a href={waLink(r.topic)} className="btn btn-ink btn-block" target="_blank" rel="noopener">
+        <a href={waLink(r.topic)} className="btn btn-accent btn-sm btn-block" target="_blank" rel="noopener">
           <WhatsAppIcon />
           Consultar
           <span className="sr-only"> por {r.topic}</span>
@@ -251,38 +245,27 @@ export function Landing({ rubros, reasons, brands, fixedNow }: Content & { fixed
         </section>
 
         {/* Galería del local */}
-        <section id="local" className="section" aria-labelledby="gallery-title">
+        <section id="local" className="section section--flush" aria-labelledby="gallery-title">
           <div className="wrap">
             <div className="section__head">
               <h2 id="gallery-title" className="section__title display" data-reveal>
                 Así es el local
               </h2>
               <p className="section__lead" data-reveal>
-                Muebles de madera, cuadros de caballos y la lámpara del mostrador. Mirá el recorrido: arranca sin
-                sonido y lo podés activar desde los controles.
+                Muebles de madera, cuadros de caballos y la lámpara del mostrador. Te esperamos en San Martín 3091.
               </p>
             </div>
-            <div className="gallery">
-              <div className="gallery__video" data-reveal>
-                <LazyVideo
-                  src="/video/recorrido.mp4"
-                  poster={poster.src}
-                  width={464}
-                  height={832}
-                  label="Recorrido en video por el interior de El Prado"
-                />
-              </div>
-              {[
-                { img: salon, alt: "Vista del salón desde la entrada: piso claro, araña de hierro, mostradores de madera y estanterías con ropa.", pos: "50% 40%" },
-                { img: mostrador, alt: "Mostrador de madera con el nombre tallado, la lámpara verde y cuadros de caballos en la pared." },
-                { img: lampara, alt: "Mostrador con la lámpara del caballo y, detrás, estanterías con mates, termos y ropa." },
-                { img: frente, alt: "Frente del local: pared de ladrillo con borde mostaza y el cartel de madera de El Prado.", pos: "50% 35%" },
-              ].map((g, i) => (
-                <figure key={i} className="gallery__item" data-reveal style={{ "--i": i + 1 } as React.CSSProperties}>
-                  <Image src={g.img} alt={g.alt} fill sizes="(min-width: 1024px) 24vw, 46vw" quality={85} className="object-cover" style={{ objectPosition: g.pos }} />
-                </figure>
-              ))}
-            </div>
+          </div>
+          <div className="gallery">
+            {[
+              { img: salon, alt: "Vista del salón desde la entrada: piso claro, araña de hierro, mostradores de madera y estanterías con ropa.", pos: "50% 45%" },
+              { img: mostrador, alt: "Mostrador de madera con el nombre tallado, la lámpara verde y cuadros de caballos en la pared.", pos: "50% 55%" },
+              { img: lampara, alt: "Mostrador con la lámpara del caballo y, detrás, estanterías con mates, termos y ropa.", pos: "50% 45%" },
+            ].map((g, i) => (
+              <figure key={i} className="gallery__item" data-reveal style={{ "--i": i } as React.CSSProperties}>
+                <Image src={g.img} alt={g.alt} fill sizes="(min-width: 768px) 34vw, 100vw" quality={85} className="object-cover" style={{ objectPosition: g.pos }} />
+              </figure>
+            ))}
           </div>
         </section>
 
@@ -337,7 +320,7 @@ export function Landing({ rubros, reasons, brands, fixedNow }: Content & { fixed
               Escribinos por talles, colores o para reservar una prenda. Te respondemos desde el local.
             </p>
             <div className="cta__actions">
-              <a href={waLink()} className="btn btn-light btn-lg" target="_blank" rel="noopener">
+              <a href={waLink()} className="btn btn-accent btn-lg" target="_blank" rel="noopener">
                 <WhatsAppIcon />
                 Escribinos por WhatsApp
               </a>
