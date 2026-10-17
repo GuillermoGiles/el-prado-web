@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Atkinson_Hyperlegible, DM_Serif_Display } from "next/font/google";
+import { Source_Sans_3, Zilla_Slab } from "next/font/google";
 import "./globals.css";
 import {
   ADDRESS_STREET,
@@ -10,15 +10,15 @@ import {
   SITE_URL,
 } from "@/lib/site";
 
-const serif = DM_Serif_Display({
+const display = Zilla_Slab({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-serif",
+  weight: ["600", "700"],
+  variable: "--font-display",
   display: "swap",
 });
-const sans = Atkinson_Hyperlegible({
+const sans = Source_Sans_3({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "600", "700"],
   variable: "--font-sans",
   display: "swap",
 });
@@ -49,8 +49,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: "cover",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#2b1b14" },
-    { media: "(prefers-color-scheme: dark)", color: "#17100c" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#141210" },
   ],
 };
 
@@ -102,7 +102,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es-AR" className={`${serif.variable} ${sans.variable}`} suppressHydrationWarning>
+    <html lang="es-AR" className={`${display.variable} ${sans.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: revealScript }} />
         <script

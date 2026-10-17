@@ -42,3 +42,44 @@ export function ArrowIcon({ className }: P) {
     </svg>
   );
 }
+
+export function MenuIcon({ className }: P) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M4 7h16M4 12h16M4 17h16" />
+    </svg>
+  );
+}
+
+export function CloseIcon({ className }: P) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M6 6l12 12M18 6 6 18" />
+    </svg>
+  );
+}
+
+export function HangerIcon({ className }: P) {
+  return (
+    <svg viewBox="0 0 32 32" aria-hidden="true" className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M13 9a3 3 0 1 1 4.5 2.6c-1 .6-1.5 1.3-1.5 2.4v1L28 22a2 2 0 0 1-1 3.7H5A2 2 0 0 1 4 22l12-7" />
+    </svg>
+  );
+}
+
+export function SwapIcon({ className }: P) {
+  return (
+    <svg viewBox="0 0 32 32" aria-hidden="true" className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M6 11h18l-5-5M26 21H8l5 5" />
+    </svg>
+  );
+}
+
+export function CardIcon({ className }: P) {
+  return (
+    <svg viewBox="0 0 32 32" aria-hidden="true" className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="4" y="8" width="24" height="16" rx="2.5" />
+      <path d="M4 13h24M9 19h5" />
+    </svg>
+  );
+}
