@@ -8,9 +8,9 @@ const DESKTOP_MQ = "(min-width: 1024px)";
 const FACHADA_ALT =
   "Fachada de El Prado: edificio de esquina color mostaza con ladrillo a la vista, carteles de madera con el nombre y la puerta de madera en la ochava.";
 
-/** Hero a todo el ancho con la fachada: vertical en el celular, horizontal en desktop. */
+/** Hero con la fachada a su tamaño real: arriba en el celular, a la derecha del texto en desktop. */
 export function Hero() {
-  const common = { alt: FACHADA_ALT, sizes: "100vw", quality: 75 };
+  const common = { alt: FACHADA_ALT, sizes: "(min-width: 1024px) 55vw, 100vw", quality: 85 };
   const { props: { srcSet: desktopSet } } = getImageProps({ ...common, src: fachadaDesktop });
   const { props: { srcSet: mobileSet, ...imgProps } } = getImageProps({ ...common, src: fachadaMobile });
 
@@ -19,7 +19,7 @@ export function Hero() {
       <div className="hero__stage">
         <div className="hero__photo">
           <picture>
-            <source media={DESKTOP_MQ} srcSet={desktopSet} sizes="100vw" />
+            <source media={DESKTOP_MQ} srcSet={desktopSet} sizes="55vw" />
             <img {...imgProps} srcSet={mobileSet} fetchPriority="high" loading="eager" decoding="async" alt={FACHADA_ALT} />
           </picture>
         </div>

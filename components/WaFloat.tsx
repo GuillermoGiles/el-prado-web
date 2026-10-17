@@ -5,14 +5,14 @@ import { WhatsAppIcon } from "./Icons";
 import { waLink } from "@/lib/site";
 
 /**
- * Botón flotante de WhatsApp (solo mobile). Mientras los botones del hero están en pantalla
- * se oculta para no taparlos: el WhatsApp sigue a un toque en todo momento.
+ * Botón flotante de WhatsApp (solo mobile). Mientras el hero está en pantalla se oculta para no
+ * tapar el texto: ahí ya están los botones de WhatsApp y Cómo llegar.
  */
 export function WaFloat() {
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    const target = document.querySelector(".hero__actions");
+    const target = document.querySelector(".hero");
     if (!target) return;
     const io = new IntersectionObserver(([entry]) => setHidden(entry.isIntersecting));
     io.observe(target);
