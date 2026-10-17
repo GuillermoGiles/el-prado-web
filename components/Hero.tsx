@@ -10,7 +10,7 @@ const FACHADA_ALT =
 
 /** Hero a todo el ancho con la fachada: vertical en el celular, horizontal en desktop. */
 export function Hero() {
-  const common = { alt: FACHADA_ALT, sizes: "100vw", quality: 85 };
+  const common = { alt: FACHADA_ALT, sizes: "100vw", quality: 75 };
   const { props: { srcSet: desktopSet } } = getImageProps({ ...common, src: fachadaDesktop });
   const { props: { srcSet: mobileSet, ...imgProps } } = getImageProps({ ...common, src: fachadaMobile });
 
