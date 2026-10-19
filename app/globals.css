@@ -247,7 +247,7 @@ a { color: inherit; }
 .card__body { display: flex; flex-direction: column; gap: 6px; padding: 16px 4px 4px; flex: 1; }
 .card__title { font-size: 1.3125rem; font-weight: 400; line-height: 1.25; overflow-wrap: anywhere; hyphens: auto; }
 .card__text { color: var(--muted); font-size: 1.0625rem; flex: 1; }
-.card .btn { margin-top: 8px; }
+.cards-cta { display: flex; justify-content: center; padding: 32px var(--gutter) 0; }
 @media (hover: hover) and (pointer: fine) { .card:hover .card__photo img { transform: scale(1.04); } }
 @media (min-width: 1024px) {
   .cards {

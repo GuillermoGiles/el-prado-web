@@ -68,11 +68,6 @@ function RubroCard({ r }: { r: Rubro }) {
       <div className="card__body">
         <h3 className="card__title">{r.title}</h3>
         <p className="card__text">{r.text}</p>
-        <a href={waLink(r.topic)} className="btn btn-accent btn-sm btn-block" target="_blank" rel="noopener">
-          <WhatsAppIcon />
-          Consultar
-          <span className="sr-only"> por {r.topic}</span>
-        </a>
       </div>
     </li>
   );
@@ -127,11 +122,19 @@ export function Landing({ rubros, reasons, brands, fixedNow }: Content & { fixed
             </div>
           </div>
           {cards.length > 0 && (
-            <ul className="cards" data-reveal>
-              {cards.map((r) => (
-                <RubroCard key={r.id} r={r} />
-              ))}
-            </ul>
+            <>
+              <ul className="cards" data-reveal>
+                {cards.map((r) => (
+                  <RubroCard key={r.id} r={r} />
+                ))}
+              </ul>
+              <div className="cards-cta">
+                <a href={waLink()} className="btn btn-accent" target="_blank" rel="noopener">
+                  <WhatsAppIcon />
+                  Consultá por WhatsApp
+                </a>
+              </div>
+            </>
           )}
         </section>
 
