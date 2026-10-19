@@ -35,6 +35,8 @@
 
 /* ---------- Base ---------- */
 html {
+  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: calc(var(--header-h) + 8px);
 }
@@ -271,16 +273,17 @@ a { color: inherit; }
   list-style: none; margin: 20px 0 0; padding: 0;
   display: flex; flex-wrap: wrap; justify-content: center; gap: 8px clamp(28px, 6vw, 96px);
 }
-.brands__name { font-size: clamp(2.5rem, 7vw, 5.5rem); text-transform: uppercase; line-height: 1.1; }
+.brands__name { font-size: clamp(min(2.5rem, 12vw), 7vw, 5.5rem); overflow-wrap: anywhere; text-transform: uppercase; line-height: 1.1; }
 .brands__more { margin-top: 18px; color: var(--muted); }
 
 /* ---------- Quiénes somos ---------- */
-.about { display: grid; background: var(--surface); color: var(--ink); }
+.about { display: grid; grid-template-columns: minmax(0, 1fr); background: var(--surface); color: var(--ink); }
 .about__photo { position: relative; aspect-ratio: 4 / 3; }
+.about__body > * { max-width: 100%; min-width: 0; }
 .about__body { display: grid; gap: 18px; align-content: center; justify-items: start; padding: clamp(40px, 6vw, 96px) var(--gutter); }
 .about__body p { max-width: 54ch; color: var(--muted); }
 @media (min-width: 1024px) {
-  .about { grid-template-columns: 1fr 1fr; min-height: 620px; }
+  .about { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 620px; }
   .about__photo { aspect-ratio: auto; }
 }
 
@@ -292,7 +295,8 @@ a { color: inherit; }
 
 /* ---------- Horarios ---------- */
 .hours { border-top: 1px solid var(--line); }
-.hours__grid { display: grid; gap: 40px; }
+.hours__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; }
+.hours__grid > * { min-width: 0; }
 .hours__head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; margin-bottom: 24px; }
 .hours__table { display: grid; }
 .hours__row {
@@ -311,7 +315,7 @@ a { color: inherit; }
 .hours__address span { color: var(--muted); font-size: 1.25rem; }
 .hours__address a { font-size: 1.25rem; margin-top: 6px; width: fit-content; padding: 6px 0; }
 .hours__actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: 10px; }
-@media (min-width: 1024px) { .hours__grid { grid-template-columns: 7fr 5fr; gap: 64px; align-items: start; } }
+@media (min-width: 1024px) { .hours__grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; align-items: start; } }
 
 /* Cartel de abierto / cerrado */
 .sign { display: inline-flex; }
