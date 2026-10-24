@@ -75,6 +75,7 @@ const jsonLd = {
     streetAddress: ADDRESS_STREET,
     addressLocality: "Ranchos",
     addressRegion: "Buenos Aires",
+    postalCode: "B1987BQI",
     addressCountry: "AR",
   },
   hasMap: MAPS_URL,
