@@ -11,9 +11,8 @@ export const INSTAGRAM_HANDLE = "@elpradoranchos";
 export const ADDRESS_STREET = "San Martín 3091";
 export const ADDRESS_CORNER = "Esquina Alem, Ranchos";
 
-export const MAPS_URL =
-  "https://www.google.com/maps/search/?api=1&query=" +
-  encodeURIComponent("El Prado, San Martín 3091, Ranchos, Buenos Aires");
+// Ficha de El Prado en Google (reseñas, fotos y "Cómo llegar"), la misma que usa el Instagram.
+export const MAPS_URL = "https://share.google/28G269y00Sil7HQP4";
 
 const WA_BASE = "https://wa.me/5492241583515";
 const WA_INTRO = "Hola! Vi la página de El Prado y quería consultar por";
