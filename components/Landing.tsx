@@ -3,6 +3,7 @@ import { Header } from "./Header";
 import { Hero } from "./Hero";
 import { OpenSign } from "./OpenSign";
 import { WaFloat } from "./WaFloat";
+import { SmoothScroll } from "./SmoothScroll";
 import { Logo } from "./Logo";
 import { CardIcon, HangerIcon, InstagramIcon, PhoneIcon, PinIcon, SwapIcon, WhatsAppIcon } from "./Icons";
 import { SCHEDULE_ROWS } from "@/lib/hours";
@@ -380,6 +381,7 @@ export function Landing({ rubros, reasons, brands, fixedNow }: Content & { fixed
       </footer>
 
       <WaFloat />
+      <SmoothScroll />
     </>
   );
 }
