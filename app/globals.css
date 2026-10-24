@@ -43,6 +43,10 @@ html {
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
+/* Las secciones reciben foco al usar los links del menú: sin recuadro para quien navega con el mouse */
+[tabindex="-1"]:focus:not(:focus-visible) { outline: none; }
+/* Con Lenis activo, el suavizado lo maneja Lenis: el del navegador se apaga para que no se peleen */
+html.lenis { scroll-behavior: auto; }
 body {
   background: var(--bg);
   color: var(--ink);
