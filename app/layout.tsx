@@ -92,6 +92,15 @@ const jsonLd = {
   sameAs: [INSTAGRAM_URL],
 };
 
+// Le dice a Google cómo se llama el sitio, para que muestre "El Prado" en vez del dominio.
+const websiteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "El Prado",
+  alternateName: ["El Prado Ranchos", "elpradoranchos.com"],
+  url: "https://elpradoranchos.com/",
+};
+
 // Marca la página como "con JS" antes de pintar y revela cada bloque al entrar en pantalla.
 // Si el script no corre, todo queda visible.
 const revealScript = `(function(){var d=document.documentElement;d.classList.add('js');
@@ -108,6 +117,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
         />
       </head>
       <body>{children}</body>
