@@ -68,6 +68,7 @@ const jsonLd = {
   description: DESCRIPTION,
   url: SITE_URL,
   image: `${SITE_URL}/opengraph-image.jpg`,
+  logo: `${SITE_URL}/icon.png`,
   telephone: PHONE_TEL,
   foundingDate: "1999",
   address: {
