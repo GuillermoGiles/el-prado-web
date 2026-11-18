@@ -43,6 +43,15 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
   formatDetection: { telephone: false },
+  // La pestaña usa el .ico chico (16/32 px). Google usa el de 192 px: fondo marrón hasta el borde,
+  // con el logo achicado para que entre entero en el círculo y no aparezca blanco alrededor.
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "16x16 32x32", type: "image/x-icon" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
 };
 
 export const viewport: Viewport = {
@@ -68,7 +77,7 @@ const jsonLd = {
   description: DESCRIPTION,
   url: SITE_URL,
   image: `${SITE_URL}/opengraph-image.jpg`,
-  logo: `${SITE_URL}/icon.png`,
+  logo: `${SITE_URL}/icon-192.png`,
   telephone: PHONE_TEL,
   foundingDate: "1999",
   address: {
